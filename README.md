@@ -1,4 +1,5 @@
 # ChartjsBundle
+Beta  Bundle in development
 Chart.js using charts with the canvas element in Symfony
 
 Symfony 2 Bundle that allow us to add charts in our projects, using [Chart.js](http://www.chartjs.org/) library.
@@ -144,7 +145,8 @@ This service define needs:
 Type of char: 
 $type => TypeCharjs::CHARJS_BAR (use fados\ChartjsBundle\Utils\TypeCharjs;)
 
-Databse Data 
+Database Data 
+```
 $data=>
        0 = {array} [4]
            zone = "Europe"
@@ -159,18 +161,25 @@ $data=>
            kpi = "Number of NIUs"
            average = "1235"
        }
-
+```
 Labels in the Chrart:
+```
 $fieldLabels => 'zone'
-
+```
 Indicator field:
+```
 $fieldKpi => 'kpi'
+```
 
 Value Field:
+```
 $fieldData => 'average'
+```
+Chartjs options:
 
+```
 $options => graphic options
-
+```
  This transform will converto to this structure of array:
 
 ```
