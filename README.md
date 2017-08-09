@@ -67,7 +67,7 @@ Then, in the template where you wish to display the Chart, add the following twi
 ```   
 The first parameter is the Canvas id, its mandatory and must be unique, canvas Width, anvas Height and an array, graphica, with an special structure.
 
-Array structure:
+Array structure (fados\ChartjsBundle\Model\ChartBuiderData):
 ```
  $grafica = new ChartBuiderData();
         $graphica->setType(TypeCharjs::CHARJS_BAR);
@@ -93,6 +93,41 @@ Array structure:
           $graphica->getHeight('150px');
           $graphica->getWidth('500px');
 ```  
+
+There are a couple of help classes related to colors and Charts type:
+
+ChartsType: Define the Charts that you can render:
+```  
+    CHARJS_BAR = 'bar';
+    CHARJS_HORIZONTALBAR = 'horizontalBar';
+    CHARJS_RADAR = 'radar';
+    CHARJS_LINE = 'line';
+    CHARJS_PIE = 'pie';
+    CHARJS_DOUGHNUT = 'doughnut';
+    CHARJS_POLAR_AREA = 'polarArea';
+    CHARJS_BUBBLE = 'bubble';
+``` 
+TypeColors: Define colors, over 250
+``` 
+ maroon = '128,0,0';
+	dark_red = '139,0,0';
+	brown = '165,42,42';
+	firebrick = '178,34,34';
+	crimson = '220,20,60';
+	red = '255,0,0';
+	tomato = '255,99,71';
+	coral = '255,127,80';
+	indian_red = '205,92,92';
+	light_coral = '240,128,128';
+	dark_salmon = '233,150,122';
+	salmon = '250,128,114';
+	light_salmon = '255,160,122';
+	orange_red = '255,69,0';
+	dark_orange = '255,140,0';
+	orange = '255,165,0';
+	gold = '255,215,0';
+ ...
+```
 
 You Could build this array by hand or using a service transformer, this service transform database data to an Array data prepared to be rendered by Chart.js:
 
