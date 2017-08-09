@@ -7,9 +7,9 @@ Symfony 2 Bundle that allow us to add charts in our projects, using [Chart.js](h
 
 Install
 -------
-
+Coming soon
 ```
-Coming next php composer.phar require fados/ChartjsBundle
+ php composer.phar require fados/ChartjsBundle
 ```
 
 register he bundle inthe appKernel.php
@@ -30,8 +30,6 @@ chartjs:
         easing: easeOutQuart
 ```
 
-In the config.yml you need to put mappings by this way
-
 Register the routing in `app/config/routing.yml`:
 
 ``` yml
@@ -50,7 +48,8 @@ http://localhost/xxx/web/app_dev.php/testchart/polarArea
 
 Publish the assets:
 
-    $ php app/console assets:install web
+$ php app/console assets:install web
+
 Add the required stylesheet and javascripts to your layout:
 
 Javascript on top:    
@@ -66,7 +65,9 @@ Then, in the template where you wish to display the calendar, add the following 
 ```
 {{ chartjs_canvas('myPieChart',graphica.width,graphica.height,graphica) }}
 ```   
-Where graphica is an array like this:
+The first parameter is the Canvas id, its mandatory and must be unique, canvas Width, anvas Height and an array, graphica, with an special structure.
+
+Array structure:
 ```
  $grafica = new ChartBuiderData();
         $graphica->setType(TypeCharjs::CHARJS_BAR);
@@ -150,3 +151,34 @@ $options => graphic options
                           [2] = 1235
 
 ```
+
+## Twig sample
+
+{% extends 'AppBundle:Default:index.html.twig' %}
+
+{% block title %}Sample Chart{% endblock %}
+
+{% block javascript-head %}
+    {{ parent() }}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+{% endblock %}
+
+{% block contingut %}
+    <div class="container">
+        <div class="Absolute-Center centrar">
+            <div class="container">
+                <h2 style="margin-bottom:20px">Chart</h2>
+                <div class="chart">
+                <h3>{{ title }}</h3>
+                {{ chartjs_canvas('mychar1',grafica.width,grafica.height,grafica) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/charjsbundle/js/Chart.min.js') }}"></script>
+{% endblock %}
+
