@@ -188,7 +188,7 @@ $options => graphic options
 ```
 
 ## Twig sample
-
+```
 {% extends 'AppBundle:Default:index.html.twig' %}
 
 {% block title %}Sample Chart{% endblock %}
@@ -216,4 +216,4 @@ $options => graphic options
     {{ parent() }}
     <script src="{{ asset('bundles/charjsbundle/js/Chart.min.js') }}"></script>
 {% endblock %}
-
+```
