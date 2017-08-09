@@ -1,0 +1,32 @@
+{
+  "name": "fados/ChartjsBundle",
+  "version":"0.0.1",
+  "type": "symfony-bundle",
+  "description": "Chartjs integration in Symfony2",
+  "keywords": ["fullCalendar"],
+  "homepage": "https://github.com/fado-produccions/ChartjsBundle",
+  "language":  "php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Albert Juhé",
+      "email": "albertjuhe@gmail.com",
+      "homepage": "https://github.com/fado/ChartjsBundle"
+    }
+  ],
+ "minimum-stability": "dev",
+ "require": {
+        "symfony/twig-bundle": "~2.1|~3.0",
+        "symfony/framework-bundle": "~2.1|~3.0",
+        "doctrine/collections": ">=1.0"
+  },
+ "autoload": {
+    "psr-0": { "fados\\ChartjsBundle\\": "" }
+  },
+  "target-dir":"fados/ChartjsBundle",
+  "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
