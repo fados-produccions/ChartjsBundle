@@ -60,7 +60,7 @@ Javascript:
 ```
     <script src="{{ asset('bundles/charjsbundle/js/Chart.min.js') }}"></script>
 ```    
-Then, in the template where you wish to display the calendar, add the following twig:
+Then, in the template where you wish to display the Chart, add the following twig:
 
 ```
 {{ chartjs_canvas('myPieChart',graphica.width,graphica.height,graphica) }}
