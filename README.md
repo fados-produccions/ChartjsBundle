@@ -137,7 +137,7 @@ public function transform($type,$data,$fieldLabels,$fieldKpi,$options,$fieldData
 Sample:
 
 ```
-$grafica = $this->get('app.chartjs.transformer_char')->transform(TypeCharjs::CHARJS_PIE,$data,'indicador_id','username',$options,'average')->toArray();
+$grafica = $this->get('app.chartjs.transformer_char')->transform(TypeCharjs::CHARJS_PIE,$data,'kpi','zone',$options,'average')->toArray();
 ```
 This service define needs:
 
