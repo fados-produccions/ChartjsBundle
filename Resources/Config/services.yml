@@ -1,0 +1,13 @@
+parameters:
+  chartjs.global.anumation.duration: %chartjs.animation.duration%
+
+services:
+  app.chartjs.twig_extension:
+       class:  fados\ChartjsBundle\Twig\chartjsExtension
+       arguments: ['@service_container']
+       public: false
+       tags:
+         - { name: twig.extension }
+
+  app.chartjs.transformer_char:
+       class: fados\ChartjsBundle\Model\ChartDataTransformer

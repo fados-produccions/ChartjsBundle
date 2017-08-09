@@ -1,0 +1,20 @@
+{% macro printChart(type, graphic) %}
+        type: '{{ type }}',
+           data: {
+            labels: {{ graphic.labels | json_encode() | raw  }},
+            datasets: [
+                {% for key,data in graphic.data %}
+                {
+                    label: '{{  key }}',
+                    data: {{data | json_encode() | raw  }},
+                    backgroundColor: "rgba({{ graphic.backgroundcolor[loop.index-1] }},0.2)",
+                    borderColor: "rgba({{ graphic.backgroundcolor[loop.index-1] }},1)",
+                    borderWidth: 1
+                },
+                {% endfor %}
+            ]
+        },
+        options: {
+
+        }
+{% endmacro %}

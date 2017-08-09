@@ -1,0 +1,18 @@
+
+<canvas id='{{ id }}' style="width:{{ width }};height:{{ height }}"></canvas>
+
+{% if graphic.data|length>0  %}
+    <script>
+       $( document ).ready( function() {
+            var ctx_{{ id }} = document.getElementById('{{ id }}').getContext('2d');
+            Chart.defaults.global.defaultFontFamily = "Georgia";
+            //Graphic {{ graphic.type }} - {{ id }}
+            {% include 'ChartjsBundle:charts:chartjs_'~graphic.type~'.html.twig' with [{'graphic':graphic,'id':id}] %}
+        });
+    </script>
+{% else %}
+    <div class="clearfix no-data">
+        <span>{{ 'no.data.found'|trans }}</span>
+    </div>
+{% endif %}
+

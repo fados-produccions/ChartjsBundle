@@ -1,0 +1,5 @@
+{%  import "@Chartjs/macroCharts.html.twig" as chartGraphic %}
+
+var myChart{{ id }} = new Chart(ctx_{{ id }}, {
+    {{ chartGraphic.printChart('bar',graphic)  }}
+});

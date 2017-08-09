@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="chart_bar" path="/testchart/bar">
+        <default key="_controller">ChartjsBundle:Chartjs:bar</default>
+        <option key="expose">true</option>
+    </route>
+    <route id="chart_horizontalBar" path="/testchart/horizontalBar">
+        <default key="_controller">ChartjsBundle:Chartjs:horizontalBar</default>
+        <option key="expose">true</option>
+    </route>
+    <route id="chart_pie" path="/testchart/pie">
+        <default key="_controller">ChartjsBundle:Chartjs:pie</default>
+        <option key="expose">true</option>
+    </route>
+    <route id="chart_doughnut" path="/testchart/doughnut">
+        <default key="_controller">ChartjsBundle:Chartjs:doughnut</default>
+        <option key="expose">true</option>
+    </route>
+    <route id="chart_line" path="/testchart/line">
+        <default key="_controller">ChartjsBundle:Chartjs:line</default>
+        <option key="expose">true</option>
+    </route>
+    <route id="chart_polarArea" path="/testchart/polarArea">
+        <default key="_controller">ChartjsBundle:Chartjs:polarArea</default>
+        <option key="expose">true</option>
+    </route>
+
+</routes>

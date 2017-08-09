@@ -1,0 +1,23 @@
+{% macro printPieChart(type, graphic) %}
+    type: '{{ type }}',
+    data: {
+    labels: {{ graphic.labels | json_encode() | raw  }},
+    datasets: [
+    {% for key,data in graphic.data %}
+        {
+        label: '{{  key }}',
+        data: {{data | json_encode() | raw  }},
+        backgroundColor: [
+            {% for data in graphic.backgroundcolor %}
+                "rgba({{ data }},0.2)",
+            {% endfor %}
+        ],
+        borderWidth: 1
+        },
+    {% endfor %}
+    ]
+    },
+    options: {
+
+    }
+{% endmacro %}

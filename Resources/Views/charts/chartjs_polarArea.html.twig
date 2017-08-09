@@ -1,0 +1,5 @@
+{%  import "@Chartjs/macroPieCharts.html.twig" as chartGraphic %}
+
+var myChart{{ id }} = new Chart(ctx_{{ id }}, {
+{{ chartGraphic.printPieChart('polarArea',graphic)  }}
+});
