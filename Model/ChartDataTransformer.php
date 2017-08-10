@@ -92,7 +92,7 @@ class ChartDataTransformer  implements TransformerInterface
         $dataFieldColor = ChartDataTransformer::data;
 
         if ($this->type==TypeCharjs::CHARJS_PIE ||
-            $this->type==TypeCharjs::CHARJS_DOUGHNUT ) {
+            $this->type==TypeCharjs::CHARJS_DOUGHNUT) {
             $dataFieldColor = ChartDataTransformer::labels;
         };
         $this->result[ChartDataTransformer::backgroundColor] = array();

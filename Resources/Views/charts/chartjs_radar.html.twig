@@ -1,26 +1,5 @@
-    var myChart{{ id }} = new Chart(ctx_{{ id }}, {
-        type: 'radar',
-        data: {
-            labels: {{ graphic.labels | json_encode() | raw  }},
-            datasets: [
-                {% for key,data in graphic.data %}
-                    {
-                    label: "{{ key }}",
-                    fill: true,
-                    backgroundColor: "{{ graphic.backgroundcolor[loop.index-1] }}",
-                    borderColor: "{{ graphic.backgroundcolor[loop.index-1] }}",
-                    pointBorderColor: "{{ graphic.backgroundcolor[loop.index-1] }}",
-                    pointBackgroundColor: "{{ graphic.backgroundcolor[loop.index-1] }}",
-                    data: {{data | json_encode() | raw  }}
-                    },
-                {% endfor %}
+{%  import "@Chartjs/macroCharts.html.twig" as chartGraphic %}
 
-            ]
-        },
-        options: {
-            title: {
-                display: true,
-                text: 'Distribution del indicador'
-            }
-        }
-    });
+var myChart{{ id }} = new Chart(ctx_{{ id }}, {
+{{ chartGraphic.printChart('radar',graphic)  }}
+});

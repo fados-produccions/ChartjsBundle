@@ -112,6 +112,36 @@ class ChartjsController extends Controller
         return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'PIE Chart'));
     }
 
+    public function radarAction()
+    {
+        $grafica = new ChartBuiderData();
+        $grafica->setType(TypeCharjs::CHARJS_RADAR);
+        $grafica->setLabels(array('Barcelona','New York','Londres','Paris','Berlin','Tokio','El Cairo'));
+        $grafica->setData(
+            array(
+                'Profit' => array(23,45,65,12,34,45,88),
+                'Cost' => array(13,34,54,11,34,35,48),
+            ));
+        $grafica->setBackgroundcolor(
+            array(
+                TypeColors::aqua,
+                TypeColors::red
+            )
+        );
+        $grafica->setBordercolor(
+            array(
+                TypeColors::aqua,
+                TypeColors::red
+
+            )
+        );
+        $grafica->getHeight('150px');
+        $grafica->getWidth('500px');
+
+
+        return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Radar Chart'));
+    }
+
     public function doughnutAction()
     {
         $grafica = new ChartBuiderData();

@@ -28,5 +28,8 @@
         <default key="_controller">ChartjsBundle:Chartjs:polarArea</default>
         <option key="expose">true</option>
     </route>
-
+    <route id="chart_polarArea" path="/testchart/radar">
+        <default key="_controller">ChartjsBundle:Chartjs:radar</default>
+        <option key="expose">true</option>
+    </route>
 </routes>
