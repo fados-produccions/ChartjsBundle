@@ -41,10 +41,15 @@ fados_chartjs:
 ```
 The routing file only have Charts tests
 http://localhost/xxx/web/app_dev.php/testchart/bar
+
 http://localhost/xxx/web/app_dev.php/testchart/horizontalBar
+
 http://localhost/xxx/web/app_dev.php/testchart/pie
+
 http://localhost/xxx/web/app_dev.php/testchart/line
+
 http://localhost/xxx/web/app_dev.php/testchart/doughnut
+
 http://localhost/xxx/web/app_dev.php/testchart/polarArea
 
 Publish the assets:
@@ -66,33 +71,33 @@ Then, in the template where you wish to display the Chart, add the following twi
 ```
 {{ chartjs_canvas('myPieChart',graphica.width,graphica.height,graphica) }}
 ```   
-The first parameter is the Canvas id, its mandatory and must be unique, canvas Width, anvas Height and an array, graphica, with an special structure.
+The first parameter is the Canvas id, its mandatory and must be unique, canvas Width, anvas Height and an array, graphicChart, with an special structure.
 
 Array structure (fados\ChartjsBundle\Model\ChartBuiderData):
 ```
- $grafica = new ChartBuiderData();
-        $graphica->setType(TypeCharjs::CHARJS_BAR);
-        $graphica->setLabels(array('Barcelona','New York','Londres','Paris','Berlin','Tokio','El Cairo'));
-        $graphica->setData(
+ $graphicChart = new ChartBuiderData();
+        $graphicChart->setType(TypeCharjs::CHARJS_BAR);
+        $graphicChart->setLabels(array('Barcelona','New York','Londres','Paris','Berlin','Tokio','El Cairo'));
+        $graphicChart->setData(
           array(
               'Profit' => array(23,45,65,12,34,45,88),
               'Cost' => array(13,34,54,11,34,35,48),
           ));
-          $graphica->setBackgroundcolor(
+          $graphicChart->setBackgroundcolor(
               array(
                   TypeColors::aqua,
                   TypeColors::dark_green
               )
           );
-          $graphica->setBordercolor(
+          $graphicChart->setBordercolor(
                 array(
                     TypeColors::aqua,
                     TypeColors::dark_green
 
                 )
           );
-          $graphica->getHeight('150px');
-          $graphica->getWidth('500px');
+          $gragraphicChartphica->getHeight('150px');
+          $graphicChart->getWidth('500px');
 ```  
 
 There are a couple of help classes related to colors and Charts type:
@@ -140,9 +145,9 @@ Sample:
 ```
 $grafica = $this->get('app.chartjs.transformer_char')->transform(TypeCharjs::CHARJS_PIE,$data,'kpi','zone',$options,'average')->toArray();
 ```
-This service define needs:
+This service has several parameters:
 
-Type of char: 
+Type of chart: 
 $type => TypeCharjs::CHARJS_BAR (use fados\ChartjsBundle\Utils\TypeCharjs;)
 
 Database Data 
