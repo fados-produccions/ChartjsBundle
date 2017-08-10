@@ -9,7 +9,7 @@
         data: {{data | json_encode() | raw  }},
         backgroundColor: [
             {% for data in graphic.backgroundcolor %}
-                "rgba({{ data }},0.2)",
+                "rgba({{ data }},{{ graphic.backgroundOpacity }})",
             {% endfor %}
         ],
         borderWidth: 1

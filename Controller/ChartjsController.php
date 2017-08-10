@@ -41,8 +41,8 @@ class ChartjsController extends Controller
 
                 )
           );
-          $grafica->getHeight('150px');
-          $grafica->getWidth('500px');
+        $grafica->setHeight('150px');
+        $grafica->setWidth('500px');
 
 
         return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Bar Chart'));
@@ -95,8 +95,9 @@ class ChartjsController extends Controller
                         }]
                     }
         ');
-        $grafica->getHeight('150px');
-        $grafica->getWidth('500px');
+        $grafica->setBackgroundOpacity(1);
+        $grafica->setHeight('150px');
+        $grafica->setWidth('500px');
 
 
         return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Stacked bar Chart'));
@@ -125,8 +126,8 @@ class ChartjsController extends Controller
 
             )
         );
-        $grafica->getHeight('150px');
-        $grafica->getWidth('500px');
+        $grafica->setHeight('150px');
+        $grafica->setWidth('500px');
 
 
         return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Horizontal bar Chart'));
@@ -163,10 +164,9 @@ class ChartjsController extends Controller
                 TypeColors::dark_orange
             )
         );
-        $grafica->getHeight('150px');
-        $grafica->getWidth('500px');
-
-
+        $grafica->setHeight('150px');
+        $grafica->setWidth('500px');
+        $grafica->setBackgroundOpacity(1);
         return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'PIE Chart'));
     }
 
@@ -193,8 +193,8 @@ class ChartjsController extends Controller
 
             )
         );
-        $grafica->getHeight('150px');
-        $grafica->getWidth('500px');
+        $grafica->setHeight('150px');
+        $grafica->setWidth('500px');
 
 
         return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Radar Chart'));
@@ -231,9 +231,8 @@ class ChartjsController extends Controller
                 TypeColors::dark_orange
             )
         );
-        $grafica->getHeight('150px');
-        $grafica->getWidth('500px');
-
+        $grafica->setHeight('150px');
+        $grafica->setWidth('500px');
 
         return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'DOUGHNUT Chart'));
     }
@@ -304,8 +303,8 @@ class ChartjsController extends Controller
                 TypeColors::dark_orange
             )
         );
-        $grafica->getHeight('150px');
-        $grafica->getWidth('500px');
+        $grafica->setHeight('150px');
+        $grafica->setWidth('500px');
 
 
         return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'PIE Chart'));

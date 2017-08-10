@@ -47,9 +47,9 @@ class ChartBuiderData
     protected $label;
 
     /**
-     * @var string
+     * @var int
      */
-    protected $color;
+    protected $backgroundOpacity;
 
     /**
      * @var string
@@ -78,6 +78,7 @@ class ChartBuiderData
     {
         $this->height = ChartBuiderData::HEIGHT;
         $this->width= ChartBuiderData::WIDTH;
+        $this->backgroundOpacity = 0.2;
     }
 
 
@@ -225,22 +226,6 @@ class ChartBuiderData
         $this->backgroundcolor = $backgroundcolor;
     }
 
-    public function toArray() {
-        return array(
-            'type'            =>$this->type,
-            'data'            => $this->data,
-            'labels'          => $this->labels,
-            'config'          => $this->config,
-            'label'           => $this->label,
-            'color'           => $this->color,
-            'bordercolor'     =>  $this->bordercolor,
-            'backgroundcolor' => $this->backgroundcolor,
-            'options'         => $this->options,
-            'height'          => $this->height,
-            'width'           => $this->width
-        );
-    }
-
     /**
      * @return array
      */
@@ -271,6 +256,39 @@ class ChartBuiderData
     public function setHeight($height)
     {
         $this->height = $height;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBackgroundOpacity()
+    {
+        return $this->backgroundOpacity;
+    }
+
+    /**
+     * @param int $backgroundOpacity
+     */
+    public function setBackgroundOpacity($backgroundOpacity)
+    {
+        $this->backgroundOpacity = $backgroundOpacity;
+    }
+
+    public function toArray() {
+        return array(
+            'type'              =>$this->type,
+            'data'              => $this->data,
+            'labels'            => $this->labels,
+            'config'            => $this->config,
+            'label'             => $this->label,
+            'color'             => $this->color,
+            'bordercolor'       =>  $this->bordercolor,
+            'backgroundcolor'   => $this->backgroundcolor,
+            'options'           => $this->options,
+            'height'            => $this->height,
+            'width'             => $this->width,
+            'backgroundOpacity' => $this->backgroundOpacity
+        );
     }
 
 
