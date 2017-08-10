@@ -13,6 +13,10 @@ use fados\ChartjsBundle\Utils\TypeColors;
 class ChartjsController extends Controller
 {
 
+    public function mainTestAction() {
+        return $this->render('ChartjsBundle:test:mainTest.html.twig');
+    }
+
     public function barAction()
     {
 

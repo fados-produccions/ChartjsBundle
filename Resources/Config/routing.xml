@@ -28,12 +28,16 @@
         <default key="_controller">ChartjsBundle:Chartjs:polarArea</default>
         <option key="expose">true</option>
     </route>
-    <route id="chart_polarArea" path="/testchart/radar">
+    <route id="chart_radar" path="/testchart/radar">
         <default key="_controller">ChartjsBundle:Chartjs:radar</default>
         <option key="expose">true</option>
     </route>
-    <route id="chart_polarArea" path="/testchart/stackedBar">
+    <route id="chart_stackedbar" path="/testchart/stackedBar">
         <default key="_controller">ChartjsBundle:Chartjs:stackedBar</default>
+        <option key="expose">true</option>
+    </route>
+    <route id="chart_main_test" path="/testchart/mainTest">
+        <default key="_controller">ChartjsBundle:Chartjs:mainTest</default>
         <option key="expose">true</option>
     </route>
 

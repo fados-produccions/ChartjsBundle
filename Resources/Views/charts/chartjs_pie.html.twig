@@ -1,4 +1,4 @@
-{%  import "@Chartjs/macroCharts.html.twig" as chartGraphic %}
+{%  import "@Chartjs/macroPieCharts.html.twig" as chartGraphic %}
 
 var myChart{{ id }} = new Chart(ctx_{{ id }}, {
     {{ chartGraphic.printPieChart('pie',graphic)  }}
