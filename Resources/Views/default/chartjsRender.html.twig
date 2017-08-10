@@ -7,7 +7,7 @@
             var ctx_{{ id }} = document.getElementById('{{ id }}').getContext('2d');
             Chart.defaults.global.defaultFontFamily = "Georgia";
             //Graphic {{ graphic.type }} - {{ id }}
-            {% include 'ChartjsBundle:charts:chartjs_'~graphic.type~'.html.twig' with [{'graphic':graphic,'id':id}] %}
+            {% include 'ChartjsBundle:charts:chartjs_'~graphic.type~'.html.twig' with [{'graphic':graphic,'id':id,'type':graphic.type}] %}
         });
     </script>
 {% else %}

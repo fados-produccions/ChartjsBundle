@@ -9,6 +9,7 @@ use Doctrine\Common\Persistence\ManagerRegistry;
 use fados\ChartjsBundle\Model\ChartBuiderData;
 use fados\ChartjsBundle\Utils\TypeCharjs;
 use fados\ChartjsBundle\Utils\TypeColors;
+use fados\ChartjsBundle\Model\ChartData;
 
 class ChartjsController extends Controller
 {
@@ -311,6 +312,66 @@ class ChartjsController extends Controller
 
 
         return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$grafica,'title'=>'PIE Chart'));
+    }
+
+    public function comboTestAction()
+    {
+        $chartData = new ChartData();
+        $grafica = new ChartBuiderData();
+        $grafica->setType(TypeCharjs::CHARJS_LINE);
+        $grafica->setLabels(array('Gener','Febrer','Mar','Abril','Maig','Juny','Juliol'));
+        $grafica->setData(
+            array(
+                'Profit' => array(23,45,65,12,34,45,88),
+            ));
+        $grafica->setBackgroundcolor(
+            array(
+                TypeColors::red,
+            )
+        );
+        $grafica->setDatasetConfig('fill: false');
+        $grafica->setBordercolor(
+            array(
+                TypeColors::red,
+            )
+        );
+        $grafica->setHeight('150px');
+        $grafica->setWidth('500px');
+        $grafica->setOptions("
+        animation: {
+              duration: 0, // general animation time
+        },
+        hover: {
+            animationDuration: 0, // duration of animations when hovering an item
+        },
+        responsiveAnimationDuration: 0, // animation duration after a resize"
+        );
+
+        $grafica->setDatasetConfig('
+            pointStyle: \'star\',
+        ');
+
+        $chartData->addDataset($grafica->toArray());
+
+        $grafica->setType(TypeCharjs::CHARJS_BAR);
+        $grafica->setBackgroundcolor(
+            array(
+                TypeColors::blue,
+            )
+        );
+        $grafica->setBordercolor(
+            array(
+                TypeColors::blue,
+            )
+        );
+
+
+        $chartData->addDataset($grafica->toArray());
+        $chartData->setHeight('150px');
+        $chartData->setWidth('500px');
+        $chartData->setType(TypeCharjs::CHARJS_BAR);
+
+        return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$chartData,'title'=>'Combo Chart'));
     }
 
 }

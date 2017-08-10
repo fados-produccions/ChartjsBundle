@@ -7,6 +7,7 @@ use fados\ChartjsBundle\Utils\TypeColors;
 use fados\ChartjsBundle\Model\Transformer\TransformerInterface;
 use fados\ChartjsBundle\Model\ChartBuiderData;
 
+
 /**
  * Created by PhpStorm.
  * User: Albert

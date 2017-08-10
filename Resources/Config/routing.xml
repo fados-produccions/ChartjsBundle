@@ -40,5 +40,9 @@
         <default key="_controller">ChartjsBundle:Chartjs:mainTest</default>
         <option key="expose">true</option>
     </route>
+    <route id="chart_combotest" path="/testchart/comboTest">
+        <default key="_controller">ChartjsBundle:Chartjs:comboTest</default>
+        <option key="expose">true</option>
+    </route>
 
 </routes>

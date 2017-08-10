@@ -1,18 +1,39 @@
 {% macro printChart(type, graphic) %}
         type: '{{ type }}',
            data: {
-            labels: {{ graphic.labels | json_encode() | raw  }},
+            {% if graphic.datasets is defined  %}
+              labels: {{ graphic.datasets[0].labels | json_encode() | raw  }},
+            {% else %}
+                labels: {{ graphic.labels | json_encode() | raw  }},
+            {% endif %}
             datasets: [
-                {% for key,data in graphic.data %}
-                {
-                    label: '{{  key }}',
-                    data: {{data | json_encode() | raw  }},
-                    backgroundColor: "rgba({{ graphic.backgroundcolor[loop.index-1] }},{{ graphic.backgroundOpacity }})",
-                    borderColor: "rgba({{ graphic.backgroundcolor[loop.index-1] }},1)",
-                    {{ graphic.datasetConfig |raw }}
-                    borderWidth: 1
-                },
-                {% endfor %}
+                {% if graphic.datasets is defined  %}
+                    {% for dataset in graphic.datasets %}
+                        {% for key,data in dataset.data %}
+                            {
+                            type: '{{dataset.type }}',
+                            label: '{{ key }}',
+                            data: {{data | json_encode() | raw  }},
+                            backgroundColor: "rgba({{ dataset.backgroundcolor[loop.index-1] }},{{ dataset.backgroundOpacity }})",
+                            borderColor: "rgba({{ dataset.backgroundcolor[loop.index-1] }},1)",
+                            {{ dataset.datasetConfig |raw }}
+                            borderWidth: 1
+                            },
+                        {% endfor %}
+                    {% endfor %}
+
+                {% else %}
+                    {% for key,data in graphic.data %}
+                    {
+                        label: '{{  key }}',
+                        data: {{data | json_encode() | raw  }},
+                        backgroundColor: "rgba({{ graphic.backgroundcolor[loop.index-1] }},{{ graphic.backgroundOpacity }})",
+                        borderColor: "rgba({{ graphic.backgroundcolor[loop.index-1] }},1)",
+                        {{ graphic.datasetConfig |raw }}
+                        borderWidth: 1
+                    },
+                    {% endfor %}
+                {% endif %}
             ]
         },
         options: {
