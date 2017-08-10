@@ -41,21 +41,7 @@ fados_chartjs:
 ```
 The routing file only have Charts tests
 
-http://localhost/xxx/web/app_dev.php/testchart/bar
-
-http://localhost/xxx/web/app_dev.php/testchart/horizontalBar
-
-http://localhost/xxx/web/app_dev.php/testchart/pie
-
-http://localhost/xxx/web/app_dev.php/testchart/line
-
-http://localhost/xxx/web/app_dev.php/testchart/doughnut
-
-http://localhost/xxx/web/app_dev.php/testchart/polarArea
-
-http://localhost/xxx/web/app_dev.php/testchart/radar
-
-http://localhost/bqdc-v2/web/app_dev.php/testchart/stackedBar
+http://localhost/xxx/web/app_dev.php/testchart/mainTest
 
 Publish the assets:
 
