@@ -40,6 +40,7 @@ fados_chartjs:
     resource: "@ChartjsBundle/Resources/Config/routing.xml"
 ```
 The routing file only have Charts tests
+
 http://localhost/xxx/web/app_dev.php/testchart/bar
 
 http://localhost/xxx/web/app_dev.php/testchart/horizontalBar
@@ -51,6 +52,8 @@ http://localhost/xxx/web/app_dev.php/testchart/line
 http://localhost/xxx/web/app_dev.php/testchart/doughnut
 
 http://localhost/xxx/web/app_dev.php/testchart/polarArea
+
+http://localhost/xxx/web/app_dev.php/testchart/radar
 
 Publish the assets:
 
