@@ -32,4 +32,9 @@
         <default key="_controller">ChartjsBundle:Chartjs:radar</default>
         <option key="expose">true</option>
     </route>
+    <route id="chart_polarArea" path="/testchart/stackedBar">
+        <default key="_controller">ChartjsBundle:Chartjs:stackedBar</default>
+        <option key="expose">true</option>
+    </route>
+
 </routes>

@@ -44,6 +44,60 @@ class ChartjsController extends Controller
         return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Bar Chart'));
     }
 
+    public function stackedBarAction()
+    {
+
+        $grafica = new ChartBuiderData();
+        $grafica->setType(TypeCharjs::CHARJS_BAR);
+        $grafica->setLabels(array('Barcelona','New York','Londres','Paris','Berlin','Tokio','El Cairo'));
+        $grafica->setData(
+            array(
+                'Profit' => array(23,45,65,12,34,45,88),
+                'Cost' => array(13,34,54,11,34,35,48),
+                'Ravenue'=> array(5,7,10,12,5,1,4),
+
+            ));
+        $grafica->setBackgroundcolor(
+            array(
+                TypeColors::aqua,
+                TypeColors::dark_green,
+                TypeColors::red
+            )
+        );
+        $grafica->setBordercolor(
+            array(
+                TypeColors::aqua,
+                TypeColors::dark_green,
+                TypeColors::red
+
+            )
+        );
+        $grafica->setOptions('
+                    title:{
+                         display:true,
+                        text:"Chart.js Bar Chart - Stacked"
+                    },
+                    tooltips: {
+                        mode: "index",
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            stacked: true,
+                        }],
+                        yAxes: [{
+                            stacked: true
+                        }]
+                    }
+        ');
+        $grafica->getHeight('150px');
+        $grafica->getWidth('500px');
+
+
+        return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Stacked bar Chart'));
+    }
+
     public function horizontalBarAction()
     {
         $grafica = new ChartBuiderData();
