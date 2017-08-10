@@ -37,7 +37,7 @@ class ChartBuiderData
     protected $config;
 
     /**
-     * @var array
+     * @var json
      */
     protected $options;
 
@@ -146,7 +146,7 @@ class ChartBuiderData
     }
 
     /**
-     * @return array
+     * @return json
      */
     public function getOptions()
     {
@@ -154,7 +154,7 @@ class ChartBuiderData
     }
 
     /**
-     * @param array $options
+     * @param json $options
      */
     public function setOptions($options)
     {

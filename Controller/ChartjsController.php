@@ -201,6 +201,15 @@ class ChartjsController extends Controller
         );
         $grafica->getHeight('150px');
         $grafica->getWidth('500px');
+        $grafica->setOptions("
+        animation: {
+              duration: 0, // general animation time
+        },
+        hover: {
+            animationDuration: 0, // duration of animations when hovering an item
+        },
+        responsiveAnimationDuration: 0, // animation duration after a resize"
+        );
 
 
         return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Line Chart'));
