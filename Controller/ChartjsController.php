@@ -43,9 +43,10 @@ class ChartjsController extends Controller
           );
         $grafica->setHeight('150px');
         $grafica->setWidth('500px');
+        $grafica->setTitle('Sample Charjs Bar');
 
 
-        return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Bar Chart'));
+        return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$grafica,'title'=>$grafica->getTitle()));
     }
 
     public function stackedBarAction()
@@ -100,7 +101,7 @@ class ChartjsController extends Controller
         $grafica->setWidth('500px');
 
 
-        return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Stacked bar Chart'));
+        return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$grafica,'title'=>'Stacked bar Chart'));
     }
 
     public function horizontalBarAction()
@@ -130,7 +131,7 @@ class ChartjsController extends Controller
         $grafica->setWidth('500px');
 
 
-        return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Horizontal bar Chart'));
+        return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$grafica,'title'=>'Horizontal bar Chart'));
     }
 
     public function pieAction()
@@ -167,7 +168,7 @@ class ChartjsController extends Controller
         $grafica->setHeight('150px');
         $grafica->setWidth('500px');
         $grafica->setBackgroundOpacity(1);
-        return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'PIE Chart'));
+        return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$grafica,'title'=>'PIE Chart'));
     }
 
     public function radarAction()
@@ -197,7 +198,7 @@ class ChartjsController extends Controller
         $grafica->setWidth('500px');
 
 
-        return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Radar Chart'));
+        return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$grafica,'title'=>'Radar Chart'));
     }
 
     public function doughnutAction()
@@ -234,7 +235,7 @@ class ChartjsController extends Controller
         $grafica->setHeight('150px');
         $grafica->setWidth('500px');
 
-        return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'DOUGHNUT Chart'));
+        return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$grafica,'title'=>'DOUGHNUT Chart'));
     }
 
     public function lineAction()
@@ -256,8 +257,8 @@ class ChartjsController extends Controller
                 TypeColors::red,
             )
         );
-        $grafica->getHeight('150px');
-        $grafica->getWidth('500px');
+        $grafica->setHeight('150px');
+        $grafica->setWidth('500px');
         $grafica->setOptions("
         animation: {
               duration: 0, // general animation time
@@ -268,8 +269,10 @@ class ChartjsController extends Controller
         responsiveAnimationDuration: 0, // animation duration after a resize"
         );
 
-
-        return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'Line Chart'));
+        $grafica->setDatasetConfig('
+            pointStyle: \'star\',
+        ');
+        return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$grafica,'title'=>'Line Chart'));
     }
 
     public function polarAreaAction()
@@ -307,7 +310,7 @@ class ChartjsController extends Controller
         $grafica->setWidth('500px');
 
 
-        return $this->render('ChartjsBundle:test:testPie.html.twig',array('grafica'=>$grafica,'title'=>'PIE Chart'));
+        return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$grafica,'title'=>'PIE Chart'));
     }
 
 }

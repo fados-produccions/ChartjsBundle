@@ -66,30 +66,44 @@ The first parameter is the Canvas id, its mandatory and must be unique, canvas W
 
 Array structure (fados\ChartjsBundle\Model\ChartBuiderData):
 ```
- $graphicChart = new ChartBuiderData();
+        $graphicChart = new ChartBuiderData();
         $graphicChart->setType(TypeCharjs::CHARJS_BAR);
         $graphicChart->setLabels(array('Barcelona','New York','Londres','Paris','Berlin','Tokio','El Cairo'));
         $graphicChart->setData(
           array(
               'Profit' => array(23,45,65,12,34,45,88),
               'Cost' => array(13,34,54,11,34,35,48),
-          ));
-          $graphicChart->setBackgroundcolor(
+          )
+        );
+        $graphicChart->setBackgroundcolor(
               array(
                   TypeColors::aqua,
                   TypeColors::dark_green
               )
-          );
-          $graphicChart->setBordercolor(
+        );
+        $graphicChart->setBordercolor(
                 array(
                     TypeColors::aqua,
                     TypeColors::dark_green
 
                 )
-          );
-          $gragraphicChartphica->getHeight('150px');
-          $graphicChart->getWidth('500px');
-```  
+        );
+        $gragraphicChartphica->getHeight('150px');
+        $graphicChart->getWidth('500px');
+        $grafica->setOptions("
+                  animation: {
+                        duration: 0, // general animation time
+                  },
+                  hover: {
+                      animationDuration: 0, // duration of animations when hovering an item
+                  },
+                  responsiveAnimationDuration: 0, // animation duration after a resize"
+        );
+
+        $grafica->setDatasetConfig('
+                      pointStyle: \'star\',
+        ');
+```
 
 There are a couple of help classes related to colors and Charts type:
 
@@ -102,8 +116,7 @@ ChartsType: Define the Charts that you can render:
     CHARJS_PIE = 'pie';
     CHARJS_DOUGHNUT = 'doughnut';
     CHARJS_POLAR_AREA = 'polarArea';
-    CHARJS_BUBBLE = 'bubble';
-``` 
+```
 TypeColors: Define colors, over 250
 ``` 
  maroon = '128,0,0';

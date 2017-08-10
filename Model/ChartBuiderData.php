@@ -42,9 +42,19 @@ class ChartBuiderData
     protected $options;
 
     /**
+     * @var json
+     */
+    protected $datasetConfig;
+
+    /**
      * @var string
      */
     protected $label;
+
+    /**
+     * @var string
+     */
+    protected $title;
 
     /**
      * @var int
@@ -130,23 +140,7 @@ class ChartBuiderData
         $this->labels = $labels;
     }
 
-    /**
-     * @return array
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
-    /**
-     * @param array $config
-     */
-    public function setConfig($config)
-    {
-        $this->config = $config;
-    }
-
-    /**
+     /**
      * @return json
      */
     public function getOptions()
@@ -176,22 +170,6 @@ class ChartBuiderData
     public function setLabel($label)
     {
         $this->label = $label;
-    }
-
-    /**
-     * @return string
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
-
-    /**
-     * @param string $color
-     */
-    public function setColor($color)
-    {
-        $this->color = $color;
     }
 
     /**
@@ -274,20 +252,52 @@ class ChartBuiderData
         $this->backgroundOpacity = $backgroundOpacity;
     }
 
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return json
+     */
+    public function getDatasetConfig()
+    {
+        return $this->datasetConfig;
+    }
+
+    /**
+     * @param json $datasetConfig
+     */
+    public function setDatasetConfig($datasetConfig)
+    {
+        $this->datasetConfig = $datasetConfig;
+    }
+
     public function toArray() {
         return array(
             'type'              =>$this->type,
+            'title'             =>$this->title,
             'data'              => $this->data,
             'labels'            => $this->labels,
-            'config'            => $this->config,
             'label'             => $this->label,
-            'color'             => $this->color,
             'bordercolor'       =>  $this->bordercolor,
             'backgroundcolor'   => $this->backgroundcolor,
             'options'           => $this->options,
             'height'            => $this->height,
             'width'             => $this->width,
-            'backgroundOpacity' => $this->backgroundOpacity
+            'backgroundOpacity' => $this->backgroundOpacity,
+            'datasetConfig'     => $this->datasetConfig
         );
     }
 
