@@ -55,6 +55,8 @@ http://localhost/xxx/web/app_dev.php/testchart/polarArea
 
 http://localhost/xxx/web/app_dev.php/testchart/radar
 
+http://localhost/bqdc-v2/web/app_dev.php/testchart/stackedBar
+
 Publish the assets:
 
 $ php app/console assets:install web
