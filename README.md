@@ -81,7 +81,7 @@ Javascript:
 ```
     <script src="{{ asset('bundles/charjsbundle/js/Chart.min.js') }}"></script>
 ```    
-Then, in the template where you wish to display the Chart, add the following twig:
+You could only add the javascript or use an extension twig, in the template where you wish to display the Chart, add the following twig:
 
 ```
 {{ chartjs_canvas('myPieChart',graphica.width,graphica.height,graphica) }}
