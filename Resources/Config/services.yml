@@ -1,3 +1,9 @@
+parameters:
+  chartjs.global.animation: chartjs.animation
+  chartjs.global.layout: chartjs.layout
+  chartjs.global.legend: chartjs.legend
+  chartjs.global.title: chartjs.title
+
 services:
   app.chartjs.twig_extension:
        class:  fados\ChartjsBundle\Twig\chartjsExtension

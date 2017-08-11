@@ -23,8 +23,8 @@ class chartjsExtension extends \Twig_Extension
     {
 
         return array(
-              'chartjs_canvas' => new \Twig_SimpleFunction('chartjs_canvas', array($this, 'chartjs_canvas'),array('is_safe' => array('html'),'needs_environment' => true)
-            ),
+              'chartjs_canvas' => new \Twig_SimpleFunction('chartjs_canvas', array($this, 'chartjs_canvas'),array('is_safe' => array('html'),'needs_environment' => true)),
+              'getParameter' =>   new \Twig_SimpleFunction('parameter', function($name) {   return $this->container->getParameter($name); }),
         );
     }
 

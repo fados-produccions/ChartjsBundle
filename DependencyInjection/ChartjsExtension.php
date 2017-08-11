@@ -21,7 +21,8 @@ class ChartjsExtension  extends Extension
         //Get parameters from config.yml
         $container->setParameter('chartjs.animation', $config['animation']);
         $container->setParameter('chartjs.layout', $config['layout']);
-
+        $container->setParameter('chartjs.legend', $config['legend']);
+        $container->setParameter('chartjs.title', $config['title']);
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }

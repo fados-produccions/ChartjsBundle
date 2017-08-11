@@ -1,11 +1,26 @@
 
 <canvas id='{{ id }}' style="width:{{ width }};height:{{ height }}"></canvas>
 
+{% set configuration = {'chartjs.animation':'animation','chartjs.layout':'animation','chartjs.legend':'animation','chartjs.title':'animation'} %}
+
 {% if graphic.data|length>0  %}
     <script>
        $( document ).ready( function() {
             var ctx_{{ id }} = document.getElementById('{{ id }}').getContext('2d');
-            Chart.defaults.global.defaultFontFamily = "Georgia";
+           {%  for keyc,config in configuration %}
+               {% if  parameter(keyc) is not empty %}
+                    {%  for key,data in parameter(keyc) %}
+                            {% if data is iterable %}
+                                {% for k,d in data %}
+                                    Chart.defaults.global.{{ config }}.{{ k }}='{{ d }}';
+                                {% endfor %}
+                            {% else %}
+                                 Chart.defaults.global.{{ config }}.{{ key }}='{{ data }}';
+                            {% endif %}
+
+                    {%  endfor %}
+               {%  endif  %}
+           {%  endfor %}
             //Graphic {{ graphic.type }} - {{ id }}
             {% include 'ChartjsBundle:charts:chartjs_'~graphic.type~'.html.twig' with [{'graphic':graphic,'id':id,'type':graphic.type}] %}
         });
