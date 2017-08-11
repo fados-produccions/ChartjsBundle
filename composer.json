@@ -22,7 +22,7 @@
         "doctrine/collections": ">=1.0"
   },
  "autoload": {
-    "psr-0": { "fados\\ChartjsBundle\\": "" }
+    "psr-4": { "fados\\ChartjsBundle\\": "" }
   },
   "extra": {
         "branch-alias": {
