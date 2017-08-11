@@ -1,5 +1,5 @@
 {
-  "name": "fados/ChartjsBundle",
+  "name": "fados/chartjs-bundle",
   "version":"0.0.1",
   "type": "symfony-bundle",
   "description": "Chartjs integration in Symfony2",
