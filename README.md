@@ -88,7 +88,8 @@ Then, in the template where you wish to display the Chart, add the following twi
 ```   
 The first parameter is the Canvas id, its mandatory and must be unique, canvas Width, anvas Height and an array, graphicChart, with an special structure.
 
-Array structure (fados\ChartjsBundle\Model\ChartBuiderData):
+Array structure for building charts (fados\ChartjsBundle\Model\ChartBuiderData).
+Sample:
 ```
         $graphicChart = new ChartBuiderData();
         $graphicChart->setType(TypeCharjs::CHARJS_BAR);
