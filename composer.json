@@ -1,6 +1,5 @@
 {
   "name": "fados/chartjs-bundle",
-  "version":"1.0.1",
   "type": "symfony-bundle",
   "description": "Chartjs integration in Symfony2",
   "keywords": ["Chartjs"],
@@ -14,9 +13,7 @@
       "homepage": "https://github.com/albertjuhe"
     }
   ],
- "minimum-stability": "stable",
- "prefer-stable":true,
- "require": {
+  "require": {
         "php": ">=5.4",
         "symfony/twig-bundle": "~2.4|~3.0",
         "symfony/framework-bundle": "~2.4|~3.0",
