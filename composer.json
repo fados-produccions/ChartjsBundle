@@ -3,15 +3,15 @@
   "version":"0.0.1",
   "type": "symfony-bundle",
   "description": "Chartjs integration in Symfony2",
-  "keywords": ["fullCalendar"],
-  "homepage": "https://github.com/fado-produccions/ChartjsBundle",
+  "keywords": ["Chartjs"],
+  "homepage": "https://github.com/fados-produccions/ChartjsBundle",
   "language":  "php",
   "license": "MIT",
   "authors": [
     {
       "name": "Albert Juhé",
       "email": "albertjuhe@gmail.com",
-      "homepage": "https://github.com/fado/ChartjsBundle"
+      "homepage": "https://github.com/albertjuhe"
     }
   ],
  "minimum-stability": "dev",
