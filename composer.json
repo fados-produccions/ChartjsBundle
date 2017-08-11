@@ -14,7 +14,7 @@
       "homepage": "https://github.com/albertjuhe"
     }
   ],
- "minimum-stability": "stable",
+ "minimum-stability": "dev",
  "require": {
         "symfony/twig-bundle": "~2.1|~3.0",
         "symfony/framework-bundle": "~2.1|~3.0",
