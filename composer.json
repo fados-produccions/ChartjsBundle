@@ -24,7 +24,7 @@
  "autoload": {
     "psr-0": { "fados\\ChartjsBundle\\": "" }
   },
-  "target-dir":"fados/ChartjsBundle",
+  "target-dir":"fados/chartjs-bundle",
   "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
