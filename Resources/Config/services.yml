@@ -1,6 +1,3 @@
-parameters:
-  chartjs.global.anumation.duration: %chartjs.animation.duration%
-
 services:
   app.chartjs.twig_extension:
        class:  fados\ChartjsBundle\Twig\chartjsExtension

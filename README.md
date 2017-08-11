@@ -22,14 +22,39 @@ register he bundle inthe appKernel.php
 Usage
 -----
 
-Configure you config.yml
+Configure you config.yml with:
 
 ```
 chartjs:
     animation:
         duration: 1000
         easing: easeOutQuart
+    layout:
+        padding: 0
+    legend:
+        display: true
+        position: 'top'
+        fullWidth: true
+        reverse: false
+        labels:
+            boxWidth:	40
+            fontSize:	12
+            fontStyle:	'normal'
+            fontColor:	'#666'
+            fontFamily:	"'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
+            padding:	10
+            usePointStyle:	false
+    title:
+        display: false
+        position: 'top'
+        fontSize: 12
+        fontFamily:	"'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
+        fontColor: '#666'
+        fontStyle: 'bold'
+        padding: 10
+        text:	''
 ```
+This configuration is for the global configuration of Chartjs.
 
 Register the routing in `app/config/routing.yml`:
 

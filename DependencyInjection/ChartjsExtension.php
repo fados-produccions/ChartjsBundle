@@ -11,7 +11,6 @@ use Symfony\Component\Config\FileLocator;
 class ChartjsExtension  extends Extension
 {
     /*
-     * Carreguem els serveis exclusius del bundle, ja que un bundle ha de ser independent als serveis de laplicació
      * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
      * Chapter 12 How to Load Service Configuration inside a Bundle
      */
@@ -20,7 +19,8 @@ class ChartjsExtension  extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
         //Get parameters from config.yml
-        $container->setParameter('chartjs.animation.duration', $config['animation']['duration']);
+        $container->setParameter('chartjs.animation', $config['animation']);
+        $container->setParameter('chartjs.layout', $config['layout']);
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
