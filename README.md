@@ -9,7 +9,7 @@ Symfony 2 Bundle that allow us to add charts in our projects, using [Chart.js](h
 Install
 -------
 ```
-composer require fados/chartjs-bundle
+composer require fados/chartjs-bundle dev-master
 ```
 
 register he bundle inthe appKernel.php
