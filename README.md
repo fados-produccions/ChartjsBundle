@@ -256,6 +256,6 @@ $options => graphic options
 
 {% block javascript %}
     {{ parent() }}
-    <script src="{{ asset('bundles/charjsbundle/js/Chart.min.js') }}"></script>
+    <script src="{{ asset('bundles/charjts/js/Chart.min.js') }}"></script>
 {% endblock %}
 ```
