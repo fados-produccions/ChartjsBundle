@@ -72,11 +72,11 @@ $ php app/console assets:install web
 
 Add the required stylesheet and javascripts to your layout:
 
-Javascript on top:    
+jquery on top (jquery library isn't in the assets, you have to add downloading from http://jquery.com/):    
 ```
     <script src="{{ asset('js/jquery.min.js') }}"></script>
 ```    
-Javascript:
+Chart.js Javascript:
 ```
     <script src="{{ asset('bundles/charjsbundle/js/Chart.min.js') }}"></script>
 ```    
@@ -84,7 +84,8 @@ You could only add the javascript or use an extension twig, in the template wher
 
 ```
 {{ chartjs_canvas('myPieChart',graphica.width,graphica.height,graphica) }}
-```   
+```
+
 The first parameter is the Canvas id, its mandatory and must be unique, canvas Width, anvas Height and an array, graphicChart, with an special structure.
 
 Array structure for building charts (fados\ChartjsBundle\Model\ChartBuiderData).
@@ -129,6 +130,38 @@ Sample:
         ');
 ```
 
+Controller will be:
+
+```
+ public function barAction()   {
+        $grafica = new ChartBuiderData();
+        $grafica->setType(TypeCharjs::CHARJS_BAR);
+        $grafica->setLabels(array('Barcelona','New York','Londres','Paris','Berlin','Tokio','El Cairo'));
+        $grafica->setData(
+          array(
+              'Profit' => array(23,45,65,12,34,45,88),
+              'Cost' => array(13,34,54,11,34,35,48),
+          ));
+          $grafica->setBackgroundcolor(
+              array(
+                  TypeColors::aqua,
+                  TypeColors::dark_green
+              )
+          );
+          $grafica->setBordercolor(
+                array(
+                    TypeColors::aqua,
+                    TypeColors::dark_green
+                )
+          );
+        $grafica->setHeight('150px');
+        $grafica->setWidth('500px');
+        $grafica->setTitle('Sample Charjs Bar');
+        return $this->render('ChartjsBundle:test:testChart.html.twig',array('grafica'=>$grafica,'title'=>$grafica->getTitle()));
+    }
+
+```
+
 There are a couple of help classes related to colors and Charts type:
 
 ChartsType: Define the Charts that you can render:
@@ -163,7 +196,7 @@ TypeColors: Define colors, over 250
  ...
 ```
 
-You Could build this array by hand or using a service transformer, this service transform database data to an Array data prepared to be rendered by Chart.js:
+You Could build this array by hand or using a service transformer $grafica = $this->get('app.chartjs.transformer_char'), this service, transform database data to an Array data, prepared to be rendered by Chart.js:
 
 ```
 public function transform($type,$data,$fieldLabels,$fieldKpi,$options,$fieldData);
