@@ -52,7 +52,7 @@ chartjs:
         padding: 10
         text:	''
 ```
-This configuration is for the global configuration of Chartjs.
+This configuration is for the global [configuration of Chartjs](http://www.chartjs.org/docs/latest/configuration/).
 
 Register the routing in `app/config/routing.yml`:
 
