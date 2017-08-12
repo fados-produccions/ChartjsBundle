@@ -10,8 +10,9 @@ Install
 ```
 composer require fados/chartjs-bundle dev-master
 ```
+This command requires you to have Composer installed globally, as explained in the installation chapter of the Composer documentation.
 
-register he bundle inthe appKernel.php
+Then, enable the bundle by adding the following line in the app/AppKernel.php file of your project
 
 ```php
    new fados\ChartjsBundle\ChartjsBundle(),
