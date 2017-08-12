@@ -1,8 +1,7 @@
 # ChartjsBundle
-Beta  Bundle in development
-Chart.js using charts with the canvas element in Symfony
+Adding charts to symfony 2 using Chart.js 2.4.0
 
-Symfony 2 Bundle that allow us to add charts in our projects, using [Chart.js](http://www.chartjs.org/) library.
+Symfony 2 Bundle that allow us to add charts in our projects, using [Chart.js 2.4.0](http://www.chartjs.org/) library.
 
 ## How to use it
 
@@ -63,7 +62,7 @@ Register the routing in `app/config/routing.yml`:
 fados_chartjs:
     resource: "@ChartjsBundle/Resources/Config/routing.xml"
 ```
-The routing file only have Charts tests
+The routing file only have Charts samples
 
 http://localhost/xxx/web/app_dev.php/testchart/mainTest
 
@@ -113,7 +112,7 @@ Sample:
 
                 )
         );
-        $gragraphicChartphica->getHeight('150px');
+        $graphicChart->getHeight('150px');
         $graphicChart->getWidth('500px');
         $grafica->setOptions("
                   animation: {
